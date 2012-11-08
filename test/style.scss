@@ -1,0 +1,41 @@
+@import 'helpers';
+@import 'crossbrowser';
+@import 'normalize';
+@import '../griglia.scss';
+
+
+$LCol: 12;
+$MCol: 6;
+$SCol: 2;
+
+
+.grid{width:100%; background-color:blue; min-width:500px; padding:10px;}
+
+.col{
+	display: inline-block;
+	vertical-align: top;
+ 	margin-right: -4px;
+ }
+.col4 {
+
+	background-color:#eee;
+
+	@include breakpoint(L) {
+		@include posL(4, 5, -4%);
+		background-color:red;
+	}
+
+	@include breakpoint(M) {
+		@include posM(3, 1, -10px);
+		background-color:green;
+	}
+
+}
+// .col8{ width:calcCol(3); background-color:yellow; padding:10px;}
+
+// .fracno{width:calcCol(3); background-color:red; padding:10px;}
+// .gigio{width:calcCol(3); margin-left: calcCol(3); position:relative; left:-200px; background-color:green;}
+// .allora{width:calcCol(12); background-color:purple; padding:10px;}
+
+
+

@@ -1,0 +1,350 @@
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/*
+ * Image replacement, it hides text
+ */
+.ir {
+  border: 0;
+  background-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  font: 0/0;
+  /*
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+   */ }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: 0;
+  width: auto;
+  height: auto; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*  TEST   */
+.break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
+
+.ellipsis {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  /* Required for IE8 */
+  -o-text-overflow: ellipsis;
+  /* Required for Opera */
+  text-overflow: ellipsis; }
+
+/*
+The first snippet (.break) works in Internet Explorer 8+, Firefox, Safari and Chrome. Sadly, it doesn’t work in Opera as far as I can tell. :(
+The second snippet (.ellipsis) works in Internet Explorer 8+, Safari, Opera and Chrome. Sadly, it doesn’t work in Firefox. However, a clever guy found a way to do it with some XML and the -moz-binding property.
+http://mattsnider.com/css-string-truncation-with-ellipsis/
+ */
+/* make long strings break in <pre> tags. */
+pre {
+  white-space: pre-wrap;
+  /* Chrome & Safari */
+  white-space: -moz-pre-wrap;
+  /* Mozilla since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */ }
+
+/*********************************************************************/
+/*                       CrossBrowser Mixins                         */
+/*********************************************************************/
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ========================================================================== HTML5 display definitions */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+/* ========================================================================== Base */
+html {
+  overflow-y: scroll;
+  /* 1 */
+  font-size: 100%;
+  /* 3 */
+  font-family: sans-serif;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */ }
+
+body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+/* ========================================================================== Links */
+a:focus {
+  outline: thin dotted; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ========================================================================== Typography */
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ========================================================================== Embedded content */
+img {
+  border: 0;
+  vertical-align: middle; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ========================================================================== Figures */
+figure {
+  margin: 0; }
+
+/* ========================================================================== Forms */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+button,
+input {
+  line-height: normal; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ========================================================================== Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  color: #888; }
+
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+/*
+
+DA USARE :
+ 
+
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+header { .column(12); }
+article { .column(9); }
+aside { .column(3); }
+
+@media (max-device-width: 960px) {
+   article { .column(12); }
+   aside { .column(12); }
+}
+
+ */
+.grid {
+  width: 100%;
+  background-color: blue;
+  min-width: 500px;
+  padding: 10px; }
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px; }
+
+.col4 {
+  background-color: #eee; }
+  @media (max-width: 1600px) {
+    .col4 {
+      width: 33.33333%;
+      padding: 5;
+      margin-left: 41.66667%;
+      position: relative;
+      left: -4%;
+      background-color: red; } }
+  @media (max-width: 1250px) {
+    .col4 {
+      width: 50%;
+      padding: 5;
+      margin-left: 16.66667%;
+      position: relative;
+      left: -10px;
+      background-color: green; } }
