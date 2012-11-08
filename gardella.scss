@@ -27,7 +27,7 @@ $SCol: 2;
 		
 	width:calcCol( $span, $LCol);
 	
-	padding:($gutter-width/2);
+	padding:0 ($gutter-width/2 + px);
 	margin-left: calcCol( $margin, $LCol);
 	position:relative;
 	left:$offset;
